@@ -1,38 +1,42 @@
-import generateStylesheetObject from '@/common/generateStylesheetsObject';
-import Clients from '@/components/common/Clients';
-import Footer from '@/components/common/Footer';
-import Lines from '@/components/common/Lines';
-import Marq2 from '@/components/common/Marq2';
-import Navbar from '@/components/common/Navbar';
-import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/cusor';
-import LoadingScreen from '@/components/common/loader';
-import Blog from '@/components/home-creative-agency/Blog';
-import Header from '@/components/home-creative-agency/Header';
-import Intro from '@/components/home-creative-agency/Intro';
-import Intro2 from '@/components/home-creative-agency/Intro2';
-import Numbers from '@/components/home-creative-agency/Numbers';
-import Portfolio from '@/components/home-creative-agency/Portfolio';
-import Services from '@/components/home-creative-agency/Services';
-import Team from '@/components/home-creative-agency/Team';
-import Testimonials from '@/components/home-creative-agency/Testimonials';
-import Script from 'next/script';
+import generateStylesheetObject from "@/common/generateStylesheetsObject";
+import Clients from "@/components/common/Clients";
+import Footer from "@/components/common/Footer";
+import Lines from "@/components/common/Lines";
+import Marq2 from "@/components/common/Marq2";
+import Navbar from "@/components/common/Navbar";
+import ProgressScroll from "@/components/common/ProgressScroll";
+import Cursor from "@/components/common/cusor";
+import LoadingScreen from "@/components/common/loader";
+import Blog from "@/components/home-creative-agency/Blog";
+import Header from "@/components/home-creative-agency/Header";
+import Intro from "@/components/home-creative-agency/Intro";
+import Intro2 from "@/components/home-creative-agency/Intro2";
+import Numbers from "@/components/home-creative-agency/Numbers";
+import Portfolio from "@/components/home-creative-agency/Portfolio";
+import Services from "@/components/home-creative-agency/Services";
+import Team from "@/components/home-creative-agency/Team";
+import Testimonials from "@/components/home-creative-agency/Testimonials";
+import { getGeneralSetting } from "@/lib/strapi";
+import Script from "next/script";
 
 export const metadata = {
-  title: 'webfolio',
+  title: "Infotigo",
   icons: {
-    icon: '/assets/imgs/favicon.ico',
-    shortcut: '/assets/imgs/favicon.ico',
+    icon: "/assets/imgs/favicon.ico",
+    shortcut: "/assets/imgs/favicon.ico",
     other: generateStylesheetObject([
-      '/assets/css/plugins.css',
-      '/assets/css/style.css',
-      'https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap',
-      'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap',
+      "/assets/css/plugins.css",
+      "/assets/css/style.css",
+      "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap",
+      "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap",
     ]),
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // get general setting form strapi
+  const { data } = await getGeneralSetting();
+
   return (
     <body>
       <LoadingScreen />
@@ -55,7 +59,7 @@ export default function Home() {
             <Blog />
             <Marq2 />
           </main>
-          <Footer />
+          <Footer data={data} />
         </div>
       </div>
 

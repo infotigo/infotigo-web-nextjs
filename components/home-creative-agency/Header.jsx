@@ -26,8 +26,8 @@ function Header() {
             <div className="caption mb-100">
               <div className="row">
                 <div className="col-lg-8">
-                  <h1 className="text-u">Webfolio</h1>
-                  <h1 className="text-u">Full services</h1>
+                  <h1 className="text-u">Empowering  </h1>
+                  <h1 className="text-u">Businesses</h1>
                 </div>
                 <div className="col-lg-4 d-flex justify-content-end">
                   <div className="circle-button md-hide">
@@ -57,12 +57,11 @@ function Header() {
               <div className="row text-left align-items-center">
                 <div className="col-lg-3 order-md-2">
                   <p>
-                    We back the founders of new forms of network, digital
-                    organisations that harness the talents.
+                    We transform your vision into reality with cutting-edge technology and digital innovation tailored to your growth.
                   </p>
                 </div>
                 <div className="col-lg-9 order-md-1 md-mb30">
-                  <h1 className="text-u">Digital agency</h1>
+                  <h1 className="text-u">With Digital Transformation</h1>
                 </div>
               </div>
             </div>
@@ -70,7 +69,7 @@ function Header() {
           <div className="col-lg-12">
             <div
               className="full-img bg-img"
-              data-background="/assets/imgs/header/2.jpg"
+              data-background="/assets/imgs/header/infotigo-banner.png"
             ></div>
           </div>
         </div>
