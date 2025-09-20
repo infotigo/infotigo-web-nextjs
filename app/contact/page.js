@@ -1,31 +1,25 @@
-import generateStylesheetObject from '@/common/generateStylesheetsObject';
-import Lines from '@/components/common/Lines';
-import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/cusor';
-import LoadingScreen from '@/components/common/loader';
-import Footer from '@/components/common/Footer';
-import Marq2 from '@/components/common/Marq2';
-import Navbar from '@/components/common/Navbar';
-import Script from 'next/script';
-import Blog from '@/components/home-main/Blog';
-import Clients from '@/components/common/Clients';
-import Team from '@/components/home-modern-studio/Team';
-import Testimonials from '@/components/home-modern-studio/Testimonials';
-import Header from '@/components/page-about/Header';
-import Intro from '@/components/page-about/Intro';
-import Numbers from '@/components/page-about/Numbers';
-import Services from '@/components/page-about/Services';
+import generateStylesheetObject from "@/common/generateStylesheetsObject";
+import Lines from "@/components/common/Lines";
+import ProgressScroll from "@/components/common/ProgressScroll";
+import Cursor from "@/components/common/cusor";
+import LoadingScreen from "@/components/common/loader";
+import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
+import Script from "next/script";
+import Header from "@/components/page-contact/Header";
+import Contact from "@/components/page-contact/Contact";
+import Map from "@/components/page-contact/Map";
 
 export const metadata = {
-  title: 'webfolio',
+  title: "webfolio",
   icons: {
-    icon: '/assets/imgs/favicon.ico',
-    shortcut: '/assets/imgs/favicon.ico',
+    icon: "/assets/imgs/favicon.ico",
+    shortcut: "/assets/imgs/favicon.ico",
     other: generateStylesheetObject([
-      '/assets/css/plugins.css',
-      '/assets/css/style.css',
-      'https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap',
-      'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap',
+      "/assets/css/plugins.css",
+      "/assets/css/style.css",
+      "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap",
+      "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap",
     ]),
   },
 };
@@ -42,19 +36,11 @@ export default function Home() {
         <div id="smooth-content">
           <main className="main-bg o-hidden">
             <Header />
-            <Intro />
-            <Numbers />
-            <Services />
-            <Team />
-            <Testimonials />
-            <Clients />
-            <Blog />
-            <Marq2 />
+            <Contact />
+            <Map />
           </main>
-          <Footer />
         </div>
       </div>
-
       <Script
         src="/assets/js/ScrollTrigger.min.js"
         strategy="beforeInteractive"
@@ -63,7 +49,6 @@ export default function Home() {
         src="/assets/js/ScrollSmoother.min.js"
         strategy="beforeInteractive"
       />
-
       <Script strategy="beforeInteractive" src="/assets/js/plugins.js"></Script>
       <Script
         strategy="beforeInteractive"
@@ -77,7 +62,6 @@ export default function Home() {
         strategy="beforeInteractive"
         src="/assets/js/countdown.js"
       ></Script>
-
       <Script
         strategy="beforeInteractive"
         src="/assets/js/gsap.min.js"
@@ -94,10 +78,8 @@ export default function Home() {
         strategy="beforeInteractive"
         src="/assets/js/imgReveal/imagesloaded.pkgd.min.js"
       ></Script>
-
       {/* <Script src="/assets/js/smoother-script.js" strategy="lazyOnload" /> */}
-
-      <Script src="/assets/js/scripts.js"></Script>
+      <Script src="/assets/js/scripts.js"></Script>{" "}
     </body>
   );
 }

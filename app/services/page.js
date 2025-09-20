@@ -1,17 +1,15 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
-import Clients from "@/components/common/Clients";
 import Marq2 from "@/components/common/Marq2";
-import Blog from "@/components/home-creative-agency/Blog";
-import Intro from "@/components/home-creative-agency/Intro";
-import Intro2 from "@/components/home-creative-agency/Intro2";
-import Numbers from "@/components/home-creative-agency/Numbers";
-import Portfolio from "@/components/home-creative-agency/Portfolio";
-import Services from "@/components/home-creative-agency/Services";
-import Team from "@/components/home-creative-agency/Team";
-import Testimonials from "@/components/home-creative-agency/Testimonials";
+import Clients from "@/components/common/Clients";
+import Services from "@/components/home-digital-agency/Services";
+import Intro2 from "@/components/home-digital-agency/Intro2";
+import Testimonials from "@/components/home-digital-agency/Testimonials";
+import Blog from "@/components/home-digital-agency/Blog";
+import Header from "@/components/page-services/Header";
+import Numbers from "@/components/page-services/Numbers";
 
 export const metadata = {
-  title: "Infotigo",
+  title: "webfolio",
   icons: {
     icon: "/assets/imgs/favicon.ico",
     shortcut: "/assets/imgs/favicon.ico",
@@ -24,15 +22,13 @@ export const metadata = {
   },
 };
 
-export default async function Home() {
+export default function Page() {
   return (
     <div>
+      <Header />
       <Services />
-      <Intro />
-      <Numbers />
-      <Portfolio />
       <Intro2 />
-      <Team />
+      <Numbers />
       <Testimonials />
       <Clients />
       <Blog />

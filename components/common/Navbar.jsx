@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import Link from 'next/link';
 import { useEffect } from 'react';
 
-function Navbar() {
+function Navbar({ data }) {
   function handleScroll() {
     const bodyScroll = window.scrollY;
     const navbar = document.querySelector('.navbar');
@@ -44,7 +45,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bord blur">
       <div className="container o-hidden">
         <Link className="logo icon-img-100" href="/">
-          <img src="/assets/imgs/logo-light.png" alt="logo" />
+          <img src={data?.logo?.url} alt="logo" />
         </Link>
 
         <button
@@ -67,243 +68,25 @@ function Navbar() {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav">
-            {/* <li
-              onMouseLeave={handleDropdownMouseLeave}
-              onMouseMove={handleDropdownMouseMove}
-              className="nav-item dropdown"
-            >
-              <a
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span className="rolling-text">Demos</span>
-              </a>
-              <div className="dropdown-menu mega-menu">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg">
-                      <a className="item-img text-center" href="/home-main">
-                        <span className="img">
-                          <img src="/assets/imgs/menu/1.png" alt="" />
-                        </span>
-                        <span className="mt-15">Main Home</span>
-                      </a>
-                    </div>
-                    <div className="col-lg">
-                      <a
-                        className="item-img text-center"
-                        href="/home-modern-studio"
-                      >
-                        <span className="img">
-                          <img src="/assets/imgs/menu/2.png" alt="" />
-                        </span>
-                        <span className="mt-15">Modern Studio</span>
-                      </a>
-                    </div>
-                    <div className="col-lg">
-                      <a
-                        className="item-img text-center"
-                        href="/home-creative-agency"
-                      >
-                        <span className="img">
-                          <img src="/assets/imgs/menu/3.png" alt="" />
-                        </span>
-                        <span className="mt-15">Creative Agency</span>
-                      </a>
-                    </div>
-                    <div className="col-lg">
-                      <a
-                        className="item-img text-center"
-                        href="/home-digital-agency"
-                      >
-                        <span className="img">
-                          <img src="/assets/imgs/menu/4.png" alt="" />
-                        </span>
-                        <span className="mt-15">Digital Agency</span>
-                      </a>
-                    </div>
-                    <div className="col-lg">
-                      <a className="item-img text-center" href="/home-personal">
-                        <span className="img">
-                          <img src="/assets/imgs/menu/5.png" alt="" />
-                        </span>
-                        <span className="mt-15">Freelancer</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li> */}
-            {/* <li
-              onMouseLeave={handleDropdownMouseLeave}
-              onMouseMove={handleDropdownMouseMove}
-              className="nav-item dropdown"
-            >
-              <a
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span className="rolling-text">Pages</span>
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" href="/page-about">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/page-services">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/page-services-details">
-                    Services Details
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/page-team">
-                    Our Team
-                  </Link>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/page-team-details">
-                    Team Details
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/page-contact">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/page-FAQ">
-                    FAQS
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/page-404">
-                    Error 404
-                  </a>
-                </li>
-              </ul>
-            </li> */}
-            {/* <li
-              onMouseLeave={handleDropdownMouseLeave}
-              onMouseMove={handleDropdownMouseMove}
-              className="nav-item dropdown"
-            >
-              <a
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span className="rolling-text">Portfolio</span>
-              </a>
-              <div className="dropdown-menu">
-                <a className="dropdown-item" href="/portfolio-gallery">
-                  Gallery
-                </a>
-                <a className="dropdown-item" href="/portfolio-creative">
-                  Portfolio Creative
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="/portfolio-creative-carousel"
-                >
-                  Creative Carousel
-                </a>
-                <a className="dropdown-item" href="/portfolio-grid">
-                  Portfolio Grid
-                </a>
-                <a className="dropdown-item" href="/portfolio-masonry">
-                  Portfolio Masonry
-                </a>
-                <a className="dropdown-item" href="/project-details">
-                  Project Details
-                </a>
-              </div>
-            </li> */}
-            {/* <li
-              onMouseLeave={handleDropdownMouseLeave}
-              onMouseMove={handleDropdownMouseMove}
-              className="nav-item dropdown"
-            >
-              <a
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span className="rolling-text">Blogs</span>
-              </a>
-              <div className="dropdown-menu">
-                <a className="dropdown-item" href="/blog-classic">
-                  Blog Standerd
-                </a>
-                <a className="dropdown-item" href="/blog-grid-sidebar">
-                  Grid With Sidebar
-                </a>
-                <a className="dropdown-item" href="/blog-grid-3column">
-                  Grid Three Column
-                </a>
-                <a className="dropdown-item" href="/blog-details">
-                  Blog Details
-                </a>
-              </div>
-            </li> */}
-            <li className="nav-item">
-              <Link className="nav-link" href="/">
-                <span className="rolling-text">Home</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/page-services">
-                <span className="rolling-text">Services</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/page-about">
-                <span className="rolling-text">About Us</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/page-team">
-                <span className="rolling-text">Our Team</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/blog-classic">
-                <span className="rolling-text">Blog</span>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/page-contact">
-                <span className="rolling-text">Contact Us</span>
-              </Link>
-            </li>
+
+            {data.navItems?.map((item) => (
+              <li className="nav-item" key={item.id}>
+                <Link className="nav-link" href={item.url}>
+                  <span className="rolling-text">{item.title}</span>
+                </Link>
+              </li>
+            ))}
+
           </ul>
         </div>
 
         <div className="contact-button">
           <Link
-            href="/page-contact"
+            target="_blank"
+            href={data?.button?.url}
             className="butn butn-sm butn-bg main-colorbg radius-5"
           >
-            <span className="text">Let&apos;s contact</span>
+            <span className="text">{data?.button?.title}</span>
           </Link>
         </div>
       </div>

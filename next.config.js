@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
+const path = require("path");
 
 const nextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
   },
   reactStrictMode: false,
   sassOptions: {
-    includePaths: [path.join(__dirname, 'css')],
+    includePaths: [path.join(__dirname, "css")],
   },
   trailingSlash: true,
   devIndicators: {
