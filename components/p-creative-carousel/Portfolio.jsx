@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import React from 'react';
 import data from '@/data/portfolios/works1';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { usePortfolio } from '@/hooks/usePortfolio';
 
 function Portfolio() {
   const swiperOptions = {
@@ -22,6 +24,9 @@ function Portfolio() {
       prevEl: '.work-crev .swiper-button-prev',
     },
   };
+
+  const { portfolios, loading } = usePortfolio();
+
   return (
     <section className="work-crev section-padding">
       <div className="container position-re pb-80">
@@ -48,34 +53,40 @@ function Portfolio() {
           </div>
         </div>
         <div className="work-swiper out-right">
-          <Swiper {...swiperOptions}>
-            {data.map((item, i) => (
-              <SwiperSlide key={i}>
-                <div className="item d-flex align-items-center">
-                  <div className="cont">
-                    <h6 className="sub-title main-color mb-15">UI/UX Design</h6>
-                    <h2>
-                      {item.title} <br /> {item.subTitle}
-                    </h2>
-                    <a
-                      href="/project-details"
-                      className="butn-crev d-flex align-items-center mt-30"
-                    >
-                      <span className="hover-this">
-                        <span className="circle hover-anim">
-                          <i className="ti-arrow-top-right"></i>
+          {!loading && <Swiper {...swiperOptions}>
+            {portfolios?.map((item, i) => {
+              // split title from first word and other all words
+              const title = item.title.split(' ');
+              return (
+                <SwiperSlide key={i}>
+                  <div className="item d-flex align-items-center">
+                    <div className="cont">
+                      <h6 className="sub-title main-color mb-15">{item.category}</h6>
+                      <h2>
+                        {title[0]} <br /> {title.slice(1).join(' ')}
+                      </h2>
+                      <a
+                        href={`/portfolio/${item.id}`}
+                        className="butn-crev d-flex align-items-center mt-30"
+                      >
+                        <span className="hover-this">
+                          <span className="circle hover-anim">
+                            <i className="ti-arrow-top-right"></i>
+                          </span>
                         </span>
-                      </span>
-                      <span className="text">View Project</span>
-                    </a>
+                        <span className="text">View Project</span>
+                      </a>
+                    </div>
+                    <div className="img">
+                      <img src={item.images[0].url} alt="" className="radius-15" />
+                    </div>
                   </div>
-                  <div className="img">
-                    <img src={item.img} alt="" className="radius-15" />
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              )
+
+
+            })}
+          </Swiper>}
           <div className="swiper-pagination"></div>
         </div>
       </div>

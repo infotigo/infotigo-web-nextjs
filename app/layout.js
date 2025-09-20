@@ -24,10 +24,7 @@ export default async function RootLayout({ children }) {
         <Navbar data={headerData} />
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            <main className="main-bg o-hidden">
-              <Header />
-              {children}
-            </main>
+            <main className="main-bg o-hidden">{children}</main>
             <Footer data={data} />
           </div>
         </div>

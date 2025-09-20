@@ -22,6 +22,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
+      <Header
       <Portfolio />
       <Marq2 />
     </div>

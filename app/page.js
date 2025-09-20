@@ -2,6 +2,7 @@ import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Clients from "@/components/common/Clients";
 import Marq2 from "@/components/common/Marq2";
 import Blog from "@/components/home-creative-agency/Blog";
+import Header from "@/components/home-creative-agency/Header";
 import Intro from "@/components/home-creative-agency/Intro";
 import Intro2 from "@/components/home-creative-agency/Intro2";
 import Numbers from "@/components/home-creative-agency/Numbers";
@@ -27,6 +28,7 @@ export const metadata = {
 export default async function Home() {
   return (
     <div>
+      <Header />
       <Services />
       <Intro />
       <Numbers />
