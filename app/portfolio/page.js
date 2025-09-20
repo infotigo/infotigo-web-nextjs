@@ -1,12 +1,14 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
+import Lines from "@/components/common/Lines";
+import ProgressScroll from "@/components/common/ProgressScroll";
+import Cursor from "@/components/common/cusor";
+import LoadingScreen from "@/components/common/loader";
+import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
-import Blog from "@/components/home-main/Blog";
-import Clients from "@/components/common/Clients";
-import Team from "@/components/home-modern-studio/Team";
-import Testimonials from "@/components/home-modern-studio/Testimonials";
-import Intro from "@/components/page-about/Intro";
-import Numbers from "@/components/page-about/Numbers";
-import Services from "@/components/page-about/Services";
+import Navbar from "@/components/common/Navbar";
+import Script from "next/script";
+import Header from "@/components/p-gallery/Header";
+import Portfolio from "@/components/p-gallery/Portfolio";
 
 export const metadata = {
   title: "webfolio",
@@ -25,13 +27,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <Intro />
-      <Numbers />
-      <Services />
-      <Team />
-      <Testimonials />
-      <Clients />
-      <Blog />
+      <Portfolio />
       <Marq2 />
     </div>
   );
