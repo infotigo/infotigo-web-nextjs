@@ -1,14 +1,9 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
-import Lines from "@/components/common/Lines";
-import ProgressScroll from "@/components/common/ProgressScroll";
-import Cursor from "@/components/common/cusor";
-import LoadingScreen from "@/components/common/loader";
-import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
-import Navbar from "@/components/common/Navbar";
-import Script from "next/script";
-import Header from "@/components/p-gallery/Header";
-import Portfolio from "@/components/p-gallery/Portfolio";
+import Portfolio from "@/components/p-creative-carousel/Portfolio";
+// import Portfolio from "@/components/p-gallery/Portfolio";
+// import Portfolio from "@/components/p-creative/Portfolio";
+// import Portfolio from "@/components/p-grid/Portfolio";
 
 export const metadata = {
   title: "webfolio",
