@@ -1,23 +1,15 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Clients from "@/components/common/Clients";
-import Footer from "@/components/common/Footer";
-import Lines from "@/components/common/Lines";
 import Marq2 from "@/components/common/Marq2";
-import Navbar from "@/components/common/Navbar";
-import ProgressScroll from "@/components/common/ProgressScroll";
-import Cursor from "@/components/common/cusor";
-import LoadingScreen from "@/components/common/loader";
 import Blog from "@/components/home-creative-agency/Blog";
 import Header from "@/components/home-creative-agency/Header";
 import Intro from "@/components/home-creative-agency/Intro";
-import Intro2 from "@/components/home-creative-agency/Intro2";
+import WhyChooseUs from "@/components/home-creative-agency/WhyChooseUs";
 import Numbers from "@/components/home-creative-agency/Numbers";
-import Portfolio from "@/components/home-creative-agency/Portfolio";
 import Services from "@/components/home-creative-agency/Services";
 import Team from "@/components/home-creative-agency/Team";
 import Testimonials from "@/components/home-creative-agency/Testimonials";
-import { getGeneralSetting } from "@/lib/strapi";
-import Script from "next/script";
+import Portfolio from "@/components/p-creative-carousel/Portfolio";
 
 export const metadata = {
   title: "Infotigo",
@@ -34,78 +26,19 @@ export const metadata = {
 };
 
 export default async function Home() {
-  // get general setting form strapi
-  const { data } = await getGeneralSetting();
-
   return (
-    <body>
-      <LoadingScreen />
-      <Cursor />
-      <ProgressScroll />
-      <Lines />
-      <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <main className="main-bg o-hidden">
-            <Header />
-            <Services />
-            <Intro />
-            <Numbers />
-            <Portfolio />
-            <Intro2 />
-            <Team />
-            <Testimonials />
-            <Clients />
-            <Blog />
-            <Marq2 />
-          </main>
-          <Footer data={data} />
-        </div>
-      </div>
-
-      <Script
-        src="/assets/js/ScrollTrigger.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        src="/assets/js/ScrollSmoother.min.js"
-        strategy="beforeInteractive"
-      />
-
-      <Script strategy="beforeInteractive" src="/assets/js/plugins.js"></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/TweenMax.min.js"
-      ></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/charming.min.js"
-      ></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/countdown.js"
-      ></Script>
-
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/gsap.min.js"
-      ></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/splitting.min.js"
-      ></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/isotope.pkgd.min.js"
-      ></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/assets/js/imgReveal/imagesloaded.pkgd.min.js"
-      ></Script>
-
-      {/* <Script src="/assets/js/smoother-script.js" strategy="lazyOnload" /> */}
-
-      <Script src="/assets/js/scripts.js"></Script>
-    </body>
+    <div>
+      <Header />
+      <Services />
+      <Intro />
+      <Numbers />
+      <Portfolio />
+      <WhyChooseUs />
+      {/* <Team /> */}
+      <Testimonials />
+      <Clients />
+      <Blog />
+      <Marq2 />
+    </div>
   );
 }

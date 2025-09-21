@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 async function Footer({ data }) {
   // console.log("Footer data", data);
-  const { siteDescription, companyName, companyPhone, companyEmail, companyAddress } = data;
+  const { companyName, companyPhone, companyEmail, companyAddress } = data;
 
   const footerCopyright = `Copyright © ${new Date().getFullYear()} ${companyName}. All Rights Reserved.`;
 
@@ -22,7 +22,7 @@ async function Footer({ data }) {
               <img src={footerData?.logo?.url || "/assets/imgs/logo-light.png"} alt="" />
             </div>
             <p className="fz-14 opacity-7 mt-20">
-              {siteDescription}
+              {footerData?.description || ' '}
             </p>
           </div>
           <div className="col-lg-3">

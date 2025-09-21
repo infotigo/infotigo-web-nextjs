@@ -1,9 +1,13 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
-import Marq2 from "@/components/common/Marq2";
-import Header from "@/components/page-team-details/Header";
-import Intro from "@/components/page-team-details/Intro";
-import Services from "@/components/page-team-details/Services";
-
+import Lines from "@/components/common/Lines";
+import ProgressScroll from "@/components/common/ProgressScroll";
+import Cursor from "@/components/common/cusor";
+import LoadingScreen from "@/components/common/loader";
+import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
+import Script from "next/script";
+import Header from "@/components/blog-classic/Header";
+import Blogs from "@/components/blog-classic/Blogs";
 export const metadata = {
   title: "webfolio",
   icons: {
@@ -18,13 +22,10 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <Header />
-      <Intro />
-      <Services />
-      <Marq2 />
+      <Blogs />
     </div>
   );
 }

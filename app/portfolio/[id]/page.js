@@ -2,12 +2,10 @@ import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Header from "@/components/project-details/Header";
 import Challenge from "@/components/project-details/Challenge";
 import Works from "@/components/project-details/Works";
-import Solution from "@/components/project-details/Solution";
-import Wroks2 from "@/components/project-details/Wroks2";
-import Next from "@/components/project-details/Next";
+import { getPortfolio } from "@/lib/strapi";
 
 export const metadata = {
-  title: "webfolio",
+  title: "Infotigo",
   icons: {
     icon: "/assets/imgs/favicon.ico",
     shortcut: "/assets/imgs/favicon.ico",
@@ -20,13 +18,25 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+// Generate static params for all portfolio items
+export async function generateStaticParams() {
+  const { data } = await getPortfolio();
+  return data.map((item) => ({
+    id: String(item.id),
+  }));
+}
+
+export default async function PortfolioDetail({ params }) {
+  // Fetch the specific portfolio item
+  const { data } = await getPortfolio();
+  const portfolio = data.find((item) => String(item.id) === params.id);
+  console.log("portfolio", portfolio);
   return (
     <div>
-      {/* <Header />
-      <Challenge />
-      <Works />
-      <Solution />
+      <Header data={portfolio} />
+      <Challenge data={portfolio} />
+      <Works data={portfolio} />
+      {/* <Solution />
       <Wroks2 />
       <Next /> */}
     </div>

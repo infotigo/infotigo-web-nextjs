@@ -1,8 +1,12 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Marq2 from "@/components/common/Marq2";
-import Header from "@/components/page-team-details/Header";
-import Intro from "@/components/page-team-details/Intro";
-import Services from "@/components/page-team-details/Services";
+import Blog from "@/components/home-main/Blog";
+import Clients from "@/components/common/Clients";
+import Team from "@/components/home-modern-studio/Team";
+import Testimonials from "@/components/home-modern-studio/Testimonials";
+import Intro from "@/components/page-about/Intro";
+import Numbers from "@/components/page-about/Numbers";
+import Services from "@/components/page-about/Services";
 
 export const metadata = {
   title: "webfolio",
@@ -18,12 +22,16 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <Header />
       <Intro />
+      <Numbers />
       <Services />
+      <Team />
+      <Testimonials />
+      <Clients />
+      <Blog />
       <Marq2 />
     </div>
   );
