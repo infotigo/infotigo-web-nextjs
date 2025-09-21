@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import isInView from '@/common/isInView';
 import React, { useEffect } from 'react';
@@ -23,12 +24,11 @@ function Intro() {
           <div className="col-lg-6">
             <div className="cont">
               <h6 className="sub-title main-color mb-15">About Us</h6>
-              <h2 className="mb-15">Best creative & modern digital agency.</h2>
+              <h2 className="mb-15">Empowering Businesses with Next-Gen Software & IT Solutions</h2>
               <p>
-                Driven professional dedicated to making a lasting impact through
-                innovative solutions and unwavering excellence.
+                At Infotigo, we blend creativity, technology, and expertise to deliver impactful digital solutions. From robust web and mobile applications to enterprise-grade IT systems, our team ensures efficiency, security, and innovation at every step. Whether you&apos;re a startup or an enterprise, we build the tools you need to transform your ideas into reality.
               </p>
-              <div className="skills-box row mt-80">
+              {/* <div className="skills-box row mt-80">
                 <div className="col-md-6">
                   <div className="skill-item sm-mb30">
                     <h5 className="sub-title mb-15">UI / UX Design 90%</h5>
@@ -45,7 +45,7 @@ function Intro() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-lg-6">

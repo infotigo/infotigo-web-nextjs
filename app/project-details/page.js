@@ -20,15 +20,15 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <Header />
+      {/* <Header />
       <Challenge />
       <Works />
       <Solution />
       <Wroks2 />
-      <Next />
+      <Next /> */}
     </div>
   );
 }

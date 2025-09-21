@@ -4,12 +4,12 @@ import Marq2 from "@/components/common/Marq2";
 import Blog from "@/components/home-creative-agency/Blog";
 import Header from "@/components/home-creative-agency/Header";
 import Intro from "@/components/home-creative-agency/Intro";
-import Intro2 from "@/components/home-creative-agency/Intro2";
+import WhyChooseUs from "@/components/home-creative-agency/WhyChooseUs";
 import Numbers from "@/components/home-creative-agency/Numbers";
-import Portfolio from "@/components/home-creative-agency/Portfolio";
 import Services from "@/components/home-creative-agency/Services";
 import Team from "@/components/home-creative-agency/Team";
 import Testimonials from "@/components/home-creative-agency/Testimonials";
+import Portfolio from "@/components/p-creative-carousel/Portfolio";
 
 export const metadata = {
   title: "Infotigo",
@@ -33,8 +33,8 @@ export default async function Home() {
       <Intro />
       <Numbers />
       <Portfolio />
-      <Intro2 />
-      <Team />
+      <WhyChooseUs />
+      {/* <Team /> */}
       <Testimonials />
       <Clients />
       <Blog />

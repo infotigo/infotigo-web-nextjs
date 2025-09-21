@@ -8,8 +8,6 @@ function Services() {
   const { services, loading } = useServices();
   if (loading) return <div>Loading...</div>;
 
-  console.log("services", services);
-
   return (
     <section className="services-crev section-padding">
       <div className="container">
