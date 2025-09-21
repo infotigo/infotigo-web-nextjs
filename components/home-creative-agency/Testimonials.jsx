@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
+import useTestimonial from '@/hooks/useTestimonial';
 import React, { useEffect } from 'react';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,6 +24,13 @@ function Testimonials() {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+
+  const { testimonial, loading } = useTestimonial();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section
       className="testimonials-minim section-padding bg-img overlay-center"
@@ -53,94 +62,52 @@ function Testimonials() {
                 className="swiper-container"
                 data-swiper="container"
               >
-                <SwiperSlide>
-                  <div className="item">
-                    <div className="content">
-                      <div className="text">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="256.721"
-                          height="208.227"
-                          viewBox="0 0 256.721 208.227"
-                          className="qout-svg"
-                        >
-                          <path
-                            data-name="Path"
-                            d="M-23.723-530.169v97.327H-121.05v-68.7q0-40.076,13.359-73.472T-62.845-639.9l36.259,28.625Q-63.8-570.244-68.57-530.169Zm158.395,0v97.327H37.345v-68.7q0-40.076,13.359-73.472T95.55-639.9l36.259,28.625Q94.6-570.244,89.825-530.169Z"
-                            transform="translate(121.55 640.568)"
-                            fill="none"
-                            stroke="#fff"
-                            strokeWidth="1"
-                            opacity="0.322"
-                          ></path>
-                        </svg>
-                        <p className="fz-30">
-                          I have been hiring people in this space for a number
-                          of years and I have never seen this level of
-                          professionalism. It really feels like you are working
-                          with a team that can get the job done.
-                        </p>
-                      </div>
-                      <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
-                        <div>
-                          <div className="fit-img circle">
-                            <img src="/assets/imgs/testim/t1.jpg" alt="" />
+                {
+                  testimonial?.map((item, i) => (
+                    <SwiperSlide key={item.id}>
+                      <div className="item">
+                        <div className="content">
+                          <div className="text">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="256.721"
+                              height="208.227"
+                              viewBox="0 0 256.721 208.227"
+                              className="qout-svg"
+                            >
+                              <path
+                                data-name="Path"
+                                d="M-23.723-530.169v97.327H-121.05v-68.7q0-40.076,13.359-73.472T-62.845-639.9l36.259,28.625Q-63.8-570.244-68.57-530.169Zm158.395,0v97.327H37.345v-68.7q0-40.076,13.359-73.472T95.55-639.9l36.259,28.625Q94.6-570.244,89.825-530.169Z"
+                                transform="translate(121.55 640.568)"
+                                fill="none"
+                                stroke="#fff"
+                                strokeWidth="1"
+                                opacity="0.322"
+                              ></path>
+                            </svg>
+                            <p className="fz-30">
+                              {item?.description}
+                            </p>
+                          </div>
+                          <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
+                            <div>
+                              <div className="fit-img circle">
+                                <img src={item?.clientImage?.url} alt="Client Image" />
+                              </div>
+                            </div>
+                            <div className="ml-20">
+                              <h5>{item?.clientName}</h5>
+                              <span className="sub-title main-color">
+                                {item?.clientDesignation}
+                              </span>
+                            </div>
                           </div>
                         </div>
-                        <div className="ml-20">
-                          <h5>Adam Beckley</h5>
-                          <span className="sub-title main-color">
-                            Founder & CEO
-                          </span>
-                        </div>
                       </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="item">
-                    <div className="content">
-                      <div className="text">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="256.721"
-                          height="208.227"
-                          viewBox="0 0 256.721 208.227"
-                          className="qout-svg"
-                        >
-                          <path
-                            data-name="Path"
-                            d="M-23.723-530.169v97.327H-121.05v-68.7q0-40.076,13.359-73.472T-62.845-639.9l36.259,28.625Q-63.8-570.244-68.57-530.169Zm158.395,0v97.327H37.345v-68.7q0-40.076,13.359-73.472T95.55-639.9l36.259,28.625Q94.6-570.244,89.825-530.169Z"
-                            transform="translate(121.55 640.568)"
-                            fill="none"
-                            stroke="#fff"
-                            strokeWidth="1"
-                            opacity="0.322"
-                          ></path>
-                        </svg>
-                        <p className="fz-30">
-                          I have been hiring people in this space for a number
-                          of years and I have never seen this level of
-                          professionalism. It really feels like you are working
-                          with a team that can get the job done.
-                        </p>
-                      </div>
-                      <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
-                        <div>
-                          <div className="fit-img circle">
-                            <img src="/assets/imgs/testim/t2.jpg" alt="" />
-                          </div>
-                        </div>
-                        <div className="ml-20">
-                          <h5>Adam Beckley</h5>
-                          <span className="sub-title main-color">
-                            Founder & CEO
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                    </SwiperSlide>
+                  ))
+                }
+
               </Swiper>
             </div>
             <div className="swiper-arrow-control control-abslout">

@@ -1,12 +1,12 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Marq2 from "@/components/common/Marq2";
 import Clients from "@/components/common/Clients";
-import Intro2 from "@/components/home-digital-agency/Intro2";
-import Testimonials from "@/components/home-digital-agency/Testimonials";
 import Blog from "@/components/home-digital-agency/Blog";
 import Header from "@/components/page-services/Header";
 import Numbers from "@/components/page-services/Numbers";
 import Services from "@/components/home-creative-agency/Services";
+import WhyChooseUs from "@/components/home-creative-agency/WhyChooseUs";
+import Testimonials from "@/components/home-creative-agency/Testimonials";
 
 export const metadata = {
   title: "webfolio",
@@ -27,7 +27,7 @@ export default function Page() {
     <div>
       <Header />
       <Services />
-      <Intro2 />
+      <WhyChooseUs />
       <Numbers />
       <Testimonials />
       <Clients />

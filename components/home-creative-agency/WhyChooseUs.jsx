@@ -17,6 +17,10 @@ function WhyChooseUs() {
 
   const { whyChooseUs: data, loading } = useWhyChooseUs();
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   console.log("whyChooseUs", data);
   return (
     <section className="intro-accord section-padding sub-bg o-hidden">
