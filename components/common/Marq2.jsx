@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
 function Marq2() {
@@ -57,7 +58,7 @@ function Marq2() {
             ))}
           </div>
 
-          <a href="/page-contact" className="overlay-link"></a>
+          <a href="/contact" className="overlay-link"></a>
         </div>
       </div>
     </section>

@@ -1,14 +1,8 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
-import Lines from "@/components/common/Lines";
-import ProgressScroll from "@/components/common/ProgressScroll";
-import Cursor from "@/components/common/cusor";
-import LoadingScreen from "@/components/common/loader";
-import Footer from "@/components/common/Footer";
-import Navbar from "@/components/common/Navbar";
-import Script from "next/script";
-import Header from "@/components/page-contact/Header";
 import Contact from "@/components/page-contact/Contact";
+import Header from "@/components/page-contact/Header";
 import Map from "@/components/page-contact/Map";
+import { getFooterSetting, getGeneralSetting } from "@/lib/strapi";
 
 export const metadata = {
   title: "webfolio",
@@ -24,11 +18,22 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const { data } = await getGeneralSetting();
+  const { data: footerData } = await getFooterSetting();
+  const socialLinks = footerData?.socialLinks;
+
+  const contactData = {
+    phone: data?.companyPhone,
+    email: data?.companyEmail,
+    address: data?.companyAddress,
+    socialLinks,
+  };
   return (
     <div>
-      <Contact />
-      <Map />
+      <Header />
+      <Contact data={contactData} />
+      {/* <Map /> */}
     </div>
   );
 }
