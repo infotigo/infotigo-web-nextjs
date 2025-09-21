@@ -1,6 +1,7 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Marq2 from "@/components/common/Marq2";
 import Portfolio from "@/components/p-creative-carousel/Portfolio";
+import Header from "@/components/p-grid/Header";
 // import Portfolio from "@/components/p-gallery/Portfolio";
 // import Portfolio from "@/components/p-creative/Portfolio";
 // import Portfolio from "@/components/p-grid/Portfolio";
@@ -22,7 +23,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <Header
+      <Header />
       <Portfolio />
       <Marq2 />
     </div>

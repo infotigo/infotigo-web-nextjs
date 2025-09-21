@@ -1,9 +1,5 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
-import Marq2 from "@/components/common/Marq2";
-import Header from "@/components/page-team-details/Header";
-import Intro from "@/components/page-team-details/Intro";
-import Services from "@/components/page-team-details/Services";
-
+import Error from "@/components/page-404/Error";
 export const metadata = {
   title: "webfolio",
   icons: {
@@ -21,10 +17,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <Header />
-      <Intro />
-      <Services />
-      <Marq2 />
+      <Error />
     </div>
   );
 }
