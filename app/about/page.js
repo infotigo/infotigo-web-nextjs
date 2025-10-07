@@ -9,7 +9,7 @@ import Numbers from "@/components/page-about/Numbers";
 import Services from "@/components/page-about/Services";
 
 export const metadata = {
-  title: "webfolio",
+  title: "Infotigo",
   icons: {
     icon: "/assets/imgs/favicon.ico",
     shortcut: "/assets/imgs/favicon.ico",

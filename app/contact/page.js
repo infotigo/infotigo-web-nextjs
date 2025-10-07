@@ -1,11 +1,10 @@
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 import Contact from "@/components/page-contact/Contact";
 import Header from "@/components/page-contact/Header";
-import Map from "@/components/page-contact/Map";
 import { getFooterSetting, getGeneralSetting } from "@/lib/strapi";
 
 export const metadata = {
-  title: "webfolio",
+  title: "Infotigo",
   icons: {
     icon: "/assets/imgs/favicon.ico",
     shortcut: "/assets/imgs/favicon.ico",
