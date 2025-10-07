@@ -78,9 +78,6 @@ async function Footer({ data }) {
           </div>
         </div>
       </div>
-      <div className="circle-blur">
-        <img src="/assets/imgs/patterns/blur1.png" alt="" />
-      </div>
     </footer>
   );
 }

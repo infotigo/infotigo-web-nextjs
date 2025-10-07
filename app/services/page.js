@@ -9,7 +9,7 @@ import WhyChooseUs from "@/components/home-creative-agency/WhyChooseUs";
 import Testimonials from "@/components/home-creative-agency/Testimonials";
 
 export const metadata = {
-  title: "webfolio",
+  title: "Infotigo",
   icons: {
     icon: "/assets/imgs/favicon.ico",
     shortcut: "/assets/imgs/favicon.ico",
